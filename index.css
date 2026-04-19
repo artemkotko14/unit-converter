@@ -1,0 +1,229 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* Custom Properties */
+:root {
+  --blue-color: #6943ff;
+  --light-black-color: #273549;
+  --dark-black-color: #1f2937;
+  --dark-purple-color: #5a537b;
+  --light-purple-color: #ccc1ff;
+  --border-purple: #b295ff;
+  --light-color: #f4f4f4;
+  --btn-text-color: #3d3d3d;
+  --p-text-color: #353535;
+}
+
+/* My Styles */
+body {
+  max-width: 34.375rem;
+  margin: 0 auto;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+/* Change theme */
+#toggle {
+  -webkit-appearance: none;
+  appearance: none;
+  align-self: flex-end;
+  position: relative;
+  width: 55px;
+  height: 30px;
+  border-radius: 25px;
+  background-color: var(--p-text-color);
+  transition: background 0.3s;
+  cursor: pointer;
+}
+#toggle::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  height: 1.25rem;
+  width: 1.25rem;
+  background-color: white;
+  transition: left 0.3s;
+}
+#toggle:checked {
+  background-color: var(--light-purple-color);
+}
+#toggle:checked::after {
+  left: 70%;
+}
+
+header {
+  background-color: var(--blue-color);
+  color: white;
+  padding: 2.125rem 3.125rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5625rem;
+}
+h1 {
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 38px;
+  letter-spacing: -3%;
+  text-align: center;
+}
+#input {
+  background-color: inherit;
+  min-width: 7.3125rem;
+  width: 7.3125rem;
+  color: white;
+  border: 2px solid var(--border-purple);
+  border-radius: 5px;
+  border: 2px solid var(--border-purple);
+  border-radius: 5px;
+  margin-top: 5px;
+
+  font-weight: 800;
+  font-size: 3.625rem;
+  line-height: 24.39px;
+  letter-spacing: 0%;
+  text-align: center;
+}
+#input::placeholder {
+  color: white;
+  background-color: inherit;
+  /* width: fit-content; */
+  color: white;
+  font-weight: 800;
+  font-size: 3.625rem;
+  line-height: 24.39px;
+  letter-spacing: 0%;
+  text-align: center;
+}
+/* Get rid of arrows */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+#convert-btn {
+  color: var(--btn-text-color);
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 9px 27.5px;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0%;
+  text-align: center;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+#convert-btn:hover,
+#convert-btn:focus {
+  cursor: pointer;
+  color: white;
+  background-color: var(--btn-text-color);
+}
+main {
+  background-color: var(--dark-black-color);
+  padding: 2.25rem 1.5625rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.conversion {
+  background-color: var(--light-black-color);
+  padding: 1rem;
+  text-align: center;
+  border-radius: 4.68px 0 0 0;
+}
+.conversion-header {
+  color: var(--light-purple-color);
+
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  text-align: center;
+  margin-bottom: 9px;
+}
+.conversion-result {
+  color: white;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  text-align: center;
+}
+/* Light theme */
+
+.light-theme {
+  background-color: var(--light-color);
+  .conversion {
+    background-color: white;
+  }
+  .conversion-header {
+    color: var(--dark-purple-color);
+  }
+  .conversion-result {
+    color: var(--p-text-color);
+  }
+}
